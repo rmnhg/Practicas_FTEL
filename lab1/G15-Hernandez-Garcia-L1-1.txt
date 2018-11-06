@@ -1,0 +1,43 @@
+Ramon Hernandez Garcia
+history
+mkdir lab1
+cd lab1
+ls
+ls -l
+ls -a
+ls -la
+ls -R
+nano prueba.txt
+ls -l
+nano prueba2.txt
+wc prueba.txt 
+wc prueba2.txt 
+cat prueba
+cat prueba.txt 
+cat prueba2.txt 
+more prueba2.txt 
+less prueba2.txt 
+cp prueba2.txt prueba3.txt
+cp prueba2.txt prueba4.txt
+nano prueba4.txt 
+diff prueba2.txt prueba3.txt 
+diff prueba2.txt prueba4.txt 
+mv prueba.txt  pp.txt
+ls
+rm pp.txt prueba3.txt 
+ls
+nano prueba2.txt 
+less prueba2.txt 
+grep -n palabra prueba2.txt 
+ls p*
+ls p?
+cp prueba2.txt pp
+cp prueba2.txt pa
+cp prueba2.txt pab
+cp prueba2.txt pac
+ls p?
+rm -i p?
+ls p*
+history
+man ls
+history -w G15-Hernandez-Garcia-L1-1-txt

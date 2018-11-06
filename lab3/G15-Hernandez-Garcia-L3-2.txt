@@ -1,0 +1,14 @@
+Ramón Hernández García
+cd lab3
+nano paises.txt
+rm -rf paises.txt 
+cat > paises.txt
+cat paises.txt
+cat >> paises.txt
+cat paises.txt | grep e | sort
+(cat paises.txt | grep e | sort) > lista-e.txt
+cat < paises.txt | sort > paises-ordenados.txt
+ls -l lista-e.txt
+chmod 660 lista-e.txt 
+ls -l lista-e.txt
+history -w G15-Hernandez-Garcia-L3-2.txt

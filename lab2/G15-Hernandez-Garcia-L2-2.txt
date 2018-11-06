@@ -1,0 +1,7 @@
+Ramón Hernández García
+cd lab2/dir2
+diff ../../fichero1 ../dir1/fichero2 
+wc -l ../dir1/fichero2 
+wc -w ../../fichero1 
+cat ../../fichero1 | grep -nv "Ramón"
+history -w ../../G15-Hernandez-Garcia-L2-2.txt

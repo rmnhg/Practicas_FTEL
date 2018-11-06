@@ -1,0 +1,45 @@
+Ramon Hernandez Garcia
+cd ~
+mkdir lab2
+mkdir lab2/dir1
+mkdir lab2/dir2
+mkdir lab2/dir2/dir3
+nano fichero1.txt
+nano lab2/dir1/fichero2.txt
+nano lab2/dir2/dir3/fichero3.txt
+nano lab2/dir2/dir3/fichero4.txt
+cd ~
+ls -R
+tree
+cd ~
+pwd
+cd /home/ramon.hgarcia/lab2/dir2/dir3/
+cd /home/ramon.hgarcia/lab2/dir1
+cd /home/ramon.hgarcia/
+cd ~
+cd lab2/dir2
+cd ../dir1
+cd ../dir2/dir3
+cd ../../..
+cd ~
+less /home/ramon.hgarcia/fichero1.txt
+nano /home/ramon.hgarcia/lab2/dir2/dir3/fichero4.txt
+mv /home/ramon.hgarcia/lab2/dir2/dir3/fichero3.txt /home/ramon.hgarcia/lab2/dir2/dir3/fichero5.txt
+cd ~
+ls -l lab2/dir2/dir3/
+nano lab2/dir2/dir3/fichero4.txt
+less lab2/dir1/fichero2.txt 
+mv lab2/dir2/dir3/fichero4.txt lab2/dir2/dir3/fichero6.txt
+cd ~
+ls -R
+cd lab2/dir1
+nano fichero8.txt
+error
+cp /home/ramon.hgarcia/fichero1.txt /home/ramon.hgarcia/lab2/dir2/fichero7.txt
+rm -i /home/ramon.hgarcia/lab2/dir2/dir3/fich*
+cd /home/ramon.hgarcia/lab2/dir1
+cp ../../fichero1.txt ../dir2/dir3/fichero8.txt
+rm -i ../dir2/fich*
+cd ../..
+ls -R
+history -w G15-Hernandez-Garcia-L2-1.txt

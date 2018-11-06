@@ -1,0 +1,18 @@
+Ramon Hernandez Garcia
+cd
+cd lab1
+nano horarios.txt
+wc horarios.txt 
+ls -la
+ls -la | grep horarios
+cp horarios.txt temporal.txt
+cp horarios.txt horarios.bak
+nano temporal.txt
+mv temporal.txt mis-horarios.txt
+ls
+ls | grep hora
+less mis-horaios.txt 
+diff horarios.txt mis-horarios.txt 
+diff horarios.txt horarios.bak
+rm -i horarios.bak
+history -w G15-Hernandez-Garcia-L1-2-txt

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html> <!--Abro la etiqueta principal-->
+	<head> <!--Cabecera de la página-->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Página de RHG</title>
+		<link rel="icon" type="image/x-icon" href="file:///C:/Users/Asus/Desktop/Practicas_FTEL/lab5/favicon.ico"> <!--Le pongo la bandera de España como icono de la página-->
+		<script type="text/javascript" src="RHG.js"></script> <!--Necesario para la calculadora-->
+		<link rel="stylesheet" type="text/css" href="RHG.css"> <!--Mi propio diseño-->
+	</head> <!--Cierro la cabecera de la página-->
+	<body> <!--Cuerpo de la página-->
+		<h1>Ramón Hernández García</h1>
+		<h2>Mi CV</h2>
+		<img src="foto.jpg" height="160px" width="120px">
+		<br><b>16/07/2000</b><br>
+		<p>
+		Estudié en el colegio Santa María del Pilar.<br>
+		Estudié la rama de ciencias.<br>
+		Ahora estoy en la ETSIT.<br>
+		</p>
+		<p>
+		Me gusta mucho la informática.<br>
+		También me dedico al mundo de la naútica (actualmente me estoy sacando el título de Patrón de Embarcación de Recreo) en las costas de Cádiz, la zona atlántica del Estrecho.
+		</p>
+		<ul>
+			<li>Fútbol
+			<li>Esquí
+			<li>Escalada
+		</ul>
+		<h2>Mi calculadora preferida</h2>
+		Número:
+		<input type="text" size="25" id="n1" onclick="vaciar()">
+		<p id="error" class="error"></p>
+		<p>
+			<button onclick="cuadrado()">
+				x<sup>2</sup>
+			</button>
+			<button onclick="inverso()">
+				1/x
+			</button>
+			<button onclick="factorial()">
+				x!
+			</button>
+			<button onclick="raiz()">
+				sqrt(x)
+			</button>
+		</p>
+	</body>
+</html>
