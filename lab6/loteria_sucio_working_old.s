@@ -10,7 +10,7 @@
 start:
   swi   timer       ; //Número de milisegundos a R0
   and   r0,r0,#0xFF ; //Aplicar máscara que deja 8 últimos bits
-  ldr   r4,=num     ; //Cargar puntero a variable num en R4
+  ldr   r4,=numero     ; //Cargar puntero a variable num en R4
   str   r0,[r4]     ; //Guardar número aleatorio (en R0) en num
   add   r9,r0,#0    ; //Almaceno el número en R9
 
@@ -22,7 +22,7 @@ start:
   cmp   r0,#64      ; //R0 < 64 (probabilidad=25%)
   bge   seguir      ; //Saltar si mayor o igual que 64
 
-  /*  else {str = "\nHa ganado 10 Euros."; */
+  /*  else {str = "\nHa ganado 10 Euros.";} */
   ldr   r1,=Premio 	  ; //Cargar puntero a msj: Premio en R0
 
   /* } // Etiqueta seguir: permite saltar fuera del bloque */
@@ -42,7 +42,8 @@ final:
 
 
 .data ;    /*  definición de variables y mensajes    */
-num:        .word  0  ; //variable num
+numero:        .word  0  ; //variable num
+str:        .word  0  ; //variable str
 StringNum:	.asciz "Numero: "
 Premio:     .asciz "Ha ganado 10 Euros.\n"
 SinPremio:  .asciz "Lo sentimos, no hay premio.\n"
