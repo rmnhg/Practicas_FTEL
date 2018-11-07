@@ -12,6 +12,13 @@ function inverso () {
 	x.value = 1/x.value;
 }
 
+function coseno () {
+	var x = document.getElementById("n1");
+	var error = document.getElementById("error");
+	error.innerHTML = "";
+	x.value = Math.cos(x.value);
+}
+
 function factorial () {
 	var x = document.getElementById("n1");
 	var error = document.getElementById("error");
