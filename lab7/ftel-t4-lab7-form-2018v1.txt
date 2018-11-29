@@ -1,0 +1,161 @@
+FTEL - Laboratorio 7 - Formulario de entrega
+
+Se deben rellenar los siguientes resultados pedidos en el enunciado de la práctica. NO borre nada de lo que ya está escrito.
+
+* Tarea 3. 
+
+3.1 Recorte y pegue aquí las sentencias CREATE TABLE usadas para crear las tablas de la base de datos:
+
+create table usuario (nombre varchar(30), clave varchar(30) NOT NULL, edad int, imagen varchar(30) NOT NULL DEFAULT "usuario.jpg", PRIMARY KEY (nombre));
+
+create table sitio (direccion varchar(30), coordenadas varchar(30) NOT NULL, PRIMARY KEY (direccion));
+
+create table quedada (que varchar(30), dia date NOT NULL, hora time NOT NULL, direccion varchar(30), PRIMARY KEY (que,direccion), FOREIGN KEY (direccion) REFERENCES sitio(direccion));
+
+create table asiste (nombre varchar(30), que varchar(30), PRIMARY KEY (nombre,que), FOREIGN KEY (nombre) REFERENCES usuario(nombre), FOREIGN KEY (que) REFERENCES quedada(que));
+
+/*create table donde (direccion varchar(30), que varchar(30), PRIMARY KEY (direccion,que), FOREIGN KEY (direccion) REFERENCES sitio(direccion), FOREIGN KEY (que) REFERENCES quedada(que));*/
+
+
+3.2. Recorte y pegue aquí el resultado de la sentencia DESCRIBE para cada una de las tablas creadas:
+
+mysql> describe usuario;
++--------+-------------+------+-----+-------------+-------+
+| Field  | Type        | Null | Key | Default     | Extra |
++--------+-------------+------+-----+-------------+-------+
+| nombre | varchar(30) | NO   | PRI | NULL        |       |
+| clave  | varchar(30) | NO   |     | NULL        |       |
+| edad   | int(11)     | YES  |     | NULL        |       |
+| imagen | varchar(30) | NO   |     | usuario.jpg |       |
++--------+-------------+------+-----+-------------+-------+
+4 rows in set (0.00 sec)
+
+
+mysql> describe asiste;
++--------+-------------+------+-----+-------------+-------+
+| Field  | Type        | Null | Key | Default     | Extra |
++--------+-------------+------+-----+-------------+-------+
+| nombre | varchar(30) | NO   | PRI | NULL        |       |
+| que    | varchar(30) | NO   | PRI | NULL        |       |
++--------+-------------+------+-----+-------------+-------+
+2 rows in set (0.00 sec)
+
+
+mysql> describe quedada;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| que         | varchar(30) | NO   | PRI | NULL    |       |
+| dia         | date        | NO   |     | NULL    |       |
+| hora        | time        | NO   |     | NULL    |       |
+| direccion   | varchar(30) | NO   | PRI | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> describe sitio;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| direccion   | varchar(30) | NO   | PRI | NULL    |       |
+| coordenadas | varchar(30) | NO   |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+
+3.3. Explique brevemente cuáles son los elementos del diagrama E-R de la práctica que se deben transformar en tablas, cuáles no y por qué:
+
+Los rectángulos tienen que ser las tablas principales cuyas columnas son los óvalos de alrededor. Los rombos deben de ser otras tablas que relacionen las tablas principales para cada quedada usando claves foráneas cuando relacionan N elementos a M elementos (como asiste), pero en el rombo "donde" creo la relación añadiendo la clave foránea "dirección" a "quedada" sin crear otra tabla.
+
+
+3.4. Recorte y pegue aquí el resultado que muestra MySQL con la sentencia SHOW TABLES:
+
+mysql> show tables;
++-----------------------+
+| Tables_in_misquedadas |
++-----------------------+
+| asiste                |
+| quedada               |
+| sitio                 |
+| usuario               |
++-----------------------+
+4 rows in set (0.00 sec)
+
+
+* Tarea 4. 
+
+4.1. Recorte y pegue aquí todas las sentencias INSERT INTO que haya utilizado para rellenar las tablas:
+
+insert into usuario values ("anita.r","ana98","","anita.r.jpg");
+insert into usuario values ("carmenpg_","carmen00","18","carmenpg_.jpg");
+insert into usuario values ("ramonhg00","1234567890","18","ramonhg00.jpg");
+
+insert into sitio values ("Cibeles","40.419154, -3.693317");
+insert into sitio values ("Pachá","40.426927, -3.699842");
+insert into sitio values ("UPM","40.452378, -3.726294");
+
+insert into quedada values ("Cenar","2018-12-07","21:30","Cibeles");
+insert into quedada values ("Estudiar","2018-12-25","09:10","UPM");
+insert into quedada values ("Fin de examenes","2018-11-30","23:00","Pachá");
+
+insert into asiste values ("anita.r","Cenar");
+insert into asiste values ("carmenpg_","Cenar");
+insert into asiste values ("ramonhg00","Fin de examenes");
+
+
+* Tarea 5.
+ 
+5.1. Recorte y pegue aquí el resultado de las sentencias SELECT  para cada una de las tablas creadas:
+
+mysql> select * from usuario;
++-----------+------------+------+---------------+
+| nombre    | clave      | edad | imagen        |
++-----------+------------+------+---------------+
+| anita.r   | ana98      | NULL | anita.r.jpg   |
+| carmenpg_ | carmen00   |   18 | carmenpg_.jpg |
+| ramonhg00 | 1234567890 |   18 | ramonhg00.jpg |
++-----------+------------+------+---------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from asiste;
++-----------+-----------------+
+| nombre    | que             |
++-----------+-----------------+
+| anita.r   | Cenar           |
+| carmenpg_ | Cenar           |
+| ramonhg00 | Fin de examenes |
++-----------+-----------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from quedada;
++-----------------+------------+----------+-----------+
+| que             | dia        | hora     | direccion |
++-----------------+------------+----------+-----------+
+| Cenar           | 2018-12-07 | 21:30:00 | Cibeles   |
+| Estudiar        | 2018-12-25 | 09:10:00 | UPM       |
+| Fin de examenes | 2018-11-30 | 23:00:00 | Pachá     |
++-----------------+------------+----------+-----------+
+3 rows in set (0.00 sec)
+
+mysql> select * from sitio;
++-----------+----------------------+
+| direccion | coordenadas          |
++-----------+----------------------+
+| Cibeles   | 40.419154, -3.693317 |
+| Pachá     | 40.426927, -3.699842 |
+| UPM       | 40.452378, -3.726294 |
++-----------+----------------------+
+3 rows in set (0.00 sec)
+
+
+5.2. Escriba una sentencia SELECT para realizar la consulta que se indique en la tarea correspondiente a su grupo de clase:
+
+
+
+
+     Recorte y pegue aquí el resultado que da MySQL al ejecutar la sentencia SELECT anterior:
+
+
+
+
+
+-------------------------------
