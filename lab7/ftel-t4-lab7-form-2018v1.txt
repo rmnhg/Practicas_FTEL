@@ -152,7 +152,17 @@ mysql> select * from sitio;
 
 
 
-     Recorte y pegue aquí el resultado que da MySQL al ejecutar la sentencia SELECT anterior:
+mysql> select sitio.direccion,sitio.coordenadas from sitio, quedada where quedada.direccion = sitio.direccion and quedada.hora > "21:00";
++-----------+----------------------+
+| direccion | coordenadas          |
++-----------+----------------------+
+| Cibeles   | 40.419154, -3.693317 |
+| Pachá     | 40.426927, -3.699842 |
++-----------+----------------------+
+2 rows in set (0.00 sec)
+
+mysql> 
+
 
 
 
