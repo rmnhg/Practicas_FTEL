@@ -1,0 +1,50 @@
+FTEL - Laboratorio 9 - Formulario de entrega
+
+Se deben rellenar los siguientes resultados pedidos en el enunciado de la práctica:
+
+* Tarea 3. En el panel superior de Wireshark seleccione el paquete que realiza la petición GET correspondiente al recurso lab9.php. Expanda ahora el análisis del protocolo de aplicación. Observe que en la cabecera HTTP aparecen diversos campos que describen aspectos relacionados con la petición. Identifique: 
+- Versión del protocolo que usa el navegador (HTTP1.0 o HTTP1.1).
+HTTP1.1
+
+- ¿Cuál es la identificación del navegador que realiza la petición? 
+Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:63.0) Gecko/20100101 Firefox/63.0
+
+- ¿Cuál es el nombre de la línea de cabecera en la que va?
+User-Agent
+
+- ¿Cuál es el nombre de la línea de cabecera que identifica la máquina a la que se hace la petición?
+
+
+- ¿Cuáles son los idiomas en los que se prefiere recibir la información que envíe el servidor? 
+en-US,en
+
+- ¿Cuál es el nombre de la línea de cabecera donde se indican?
+Accept-Language
+
+- ¿Cuál es el nombre de la línea de cabecera donde se indica que el navegador puede aceptar texto HTML como contenido?
+Accept
+
+* Tarea 4. Estudio de las respuestas a la petición HTTP. Examine ahora el detalle de los paquetes que corresponden a las respuestas del servidor. Concretamente, identifique, para la respuesta que corresponde al logotipo de la UPM: 
+- Tamaño del fichero del logotipo y dónde ha encontrado dicha información (que debe haberse obtenido usando Wireshark).
+
+
+Vuelva a arrancar la captura de Wireshark. Cargue de nuevo la página web de la práctica y examine en el analizador la petición GET que se refiere al logotipo de FTEL. 
+- ¿Aparece la línea de cabecera If-Modified-Since? En caso afirmativo, ¿cuál es el objetivo de incluir dicha línea en la petición?
+
+
+- Examine las respuestas a las peticiones de las imágenes. ¿Qué código de estado aparece en ellas? ¿Qué significa eso para el navegador que recibe las respuestas?
+
+
+
+* Tarea 6. Realización de consultas iterativas al DNS. Para cada uno de los sitios web indicados, realice los puntos que siguen.
+- En el cuadro de texto "Hostnames or IP addresses", escriba el nombre DNS del servidor web. En la columna "Options", marque la opción "trace". Pulse el botón "Dig". Incluya en el formulario de la práctica la salida de la orden anterior. 
+
+
+
+- Indique cuál es la dirección IP del servidor web buscado.
+
+
+- ¿El nombre del servidor web es un “alias”? ¿Por qué?
+
+
+
