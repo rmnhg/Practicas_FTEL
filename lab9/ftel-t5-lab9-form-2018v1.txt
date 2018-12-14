@@ -4,7 +4,7 @@ Se deben rellenar los siguientes resultados pedidos en el enunciado de la práct
 
 * Tarea 3. En el panel superior de Wireshark seleccione el paquete que realiza la petición GET correspondiente al recurso lab9.php. Expanda ahora el análisis del protocolo de aplicación. Observe que en la cabecera HTTP aparecen diversos campos que describen aspectos relacionados con la petición. Identifique: 
 - Versión del protocolo que usa el navegador (HTTP1.0 o HTTP1.1).
-HTTP1.1
+HTTP/1.1
 
 - ¿Cuál es la identificación del navegador que realiza la petición? 
 Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:63.0) Gecko/20100101 Firefox/63.0
@@ -13,7 +13,7 @@ Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:63.0) Gecko/20100101 Firefox/63.0
 User-Agent
 
 - ¿Cuál es el nombre de la línea de cabecera que identifica la máquina a la que se hace la petición?
-
+Host
 
 - ¿Cuáles son los idiomas en los que se prefiere recibir la información que envíe el servidor? 
 en-US,en
@@ -26,14 +26,14 @@ Accept
 
 * Tarea 4. Estudio de las respuestas a la petición HTTP. Examine ahora el detalle de los paquetes que corresponden a las respuestas del servidor. Concretamente, identifique, para la respuesta que corresponde al logotipo de la UPM: 
 - Tamaño del fichero del logotipo y dónde ha encontrado dicha información (que debe haberse obtenido usando Wireshark).
-
+11821 bytes y sale del apartado Hypertext Transfer Protocol en la etiqueta File Data o pinchando encima del apartado Portable Networks Graphics y mirando en la barra de abajo su tamaño (es el mismo).
 
 Vuelva a arrancar la captura de Wireshark. Cargue de nuevo la página web de la práctica y examine en el analizador la petición GET que se refiere al logotipo de FTEL. 
 - ¿Aparece la línea de cabecera If-Modified-Since? En caso afirmativo, ¿cuál es el objetivo de incluir dicha línea en la petición?
-
+Sí porque en esta petición el navegador ya tiene guardadas las imágenes en la caché y, para ahorrar tiempo, le pregunta al servidor si las imágenes han sido modificadas para, en caso contrario, usar las imagenes locales y en vez de recibirlas otra vez.
 
 - Examine las respuestas a las peticiones de las imágenes. ¿Qué código de estado aparece en ellas? ¿Qué significa eso para el navegador que recibe las respuestas?
-
+Not Modified. Significa que las imágenes que ya tenía guardadas no han sido modificadas por el servidor y se pueden reutilizar.
 
 
 * Tarea 6. Realización de consultas iterativas al DNS. Para cada uno de los sitios web indicados, realice los puntos que siguen.
