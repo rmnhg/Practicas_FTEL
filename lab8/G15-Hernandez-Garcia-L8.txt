@@ -1,0 +1,60 @@
+FTEL - Laboratorio 8 - Formulario de entrega
+
+Se deben rellenar los siguientes resultados pedidos en el enunciado de la práctica:
+
+* Tarea 1.
+- Dirección IP del ordenador en el que ha realizado la práctica:
+138.4.31.182
+
+* Tarea 4.
+-  Indique en qué posición dentro de la cabecera IP se encuentran los octetos que en la cabecera IP llevan la dirección origen del paquete IP:
+Del 26 al 29
+
+
+- Indique justificadamente si al transmitirse por la red los octetos de la dirección IP se envían en el orden del convenio extremista mayor o el extremista menor:
+Está en convenio extremista mayor porque al pasar 8a 04 1f b6 a decimal sale directamente 138 4 31 182 respectivamente que es la dirección IP de mi equipo. 
+
+* Tarea 5.
+- Anote los puertos origen y destino del paquete examinado:
+Puerto de origen:	55798
+Puerto de destino:	80
+ 
+- ¿Qué protocolo de aplicación está asociado al puerto destino?:
+HTTP
+
+* Tarea 7.
+- Haga un traceroute, con la opción -N 1, a la dirección IP anotada en el punto anterior. Compare las direcciones IP que le va mostrando asociadas a cada número de saltos con las direcciones que le han aparecido en los pings: que ha hecho en esta tarea y explique las coincidencias:
+Solo hay una coincidencia en la dirección IP final que es el destino del paquete que recibimos cuando hacemos ping a esa página, por lo que seguramente la página se aloje en esa dirección IP final.
+
+* Tarea 8.
+- Incluya la salida de dicha orden en el formulario de respuesta:
+traceroute to 132.198.101.197 (132.198.101.197), 30 hops max, 60 byte packets
+ 1  router-lab.lab.dit.upm.es (138.4.30.1)  0.128 ms  0.112 ms  0.108 ms
+ 2  fw.lab.dit.upm.es (138.4.26.1)  0.319 ms  0.259 ms  0.219 ms
+ 3  r7000-ext.dit.upm.es (138.4.0.1)  0.677 ms  0.583 ms  0.532 ms
+ 4  192.168.100.65 (192.168.100.65)  21.155 ms  0.689 ms  0.767 ms
+ 5  192.168.200.84 (192.168.200.84)  0.789 ms  0.583 ms  0.520 ms
+ 6  ciemat-rt-ju-02-xe-4-0-2.net.redimadrid.es (193.145.14.134)  0.984 ms  1.187 ms  1.078 ms
+ 7  AE3-103.ciemat.rt1.mad.red.rediris.es (130.206.212.105)  36.102 ms  1.425 ms  0.938 ms
+ 8  ciemat.ae2.telmad.rt4.mad.red.rediris.es (130.206.245.2)  1.459 ms  9.451 ms  1.576 ms
+ 9  rediris.mx1.mar.fr.geant.net (62.40.124.192)  15.449 ms  15.371 ms  15.302 ms
+10  ae8.mx1.gen.ch.geant.net (62.40.98.73)  21.774 ms  21.894 ms  24.105 ms
+11  ae4.mx1.par.fr.geant.net (62.40.98.152)  28.688 ms  29.021 ms  29.055 ms
+12  et-3-1-0.102.rtsw.newy32aoa.net.internet2.edu (198.71.45.236)  113.672 ms  113.223 ms  113.544 ms
+13  ae-2.4079.rtsw.hart2.net.internet2.edu (162.252.70.100)  116.983 ms  116.940 ms  117.287 ms
+14  et-4-0-0.4079.rtsw.bost.net.internet2.edu (162.252.70.98)  119.596 ms  119.937 ms  119.460 ms
+15  et-7-0-0.4079.rtsw.alba.net.internet2.edu (162.252.70.96)  121.443 ms  121.886 ms  121.535 ms
+16  te0-0-1-1-1800-gw1.i2-clev.uvm.edu (132.198.255.161)  125.383 ms  125.485 ms  125.696 ms
+17  te0-0-2-3.gw3-gw1.uvm.edu (132.198.255.129)  108.466 ms  109.077 ms  108.898 ms
+18  vl55.aa.uvm.edu (132.198.200.19)  108.442 ms  156.556 ms  108.712 ms
+19  pc1-2-mann-N77K6.aa.uvm.edu (132.198.200.46)  107.209 ms  107.365 ms  107.606 ms
+20  www.uvm.edu (132.198.101.197)  106.829 ms  106.912 ms  106.716 ms
+
+- ¿A cuántos saltos se encuentra de su ordenador el servidor indicado?:
+20
+
+- ¿Entre qué máquinas (dé sus nombres y direcciones IP) se produce el mayor incremento del RTT? Indique una posible explicación de este incremento:
+11  ae4.mx1.par.fr.geant.net (62.40.98.152)  28.688 ms  29.021 ms  29.055 ms
+12  et-3-1-0.102.rtsw.newy32aoa.net.internet2.edu (198.71.45.236)  113.672 ms  113.223 ms  113.544 ms
+
+Es posible que estas máquinas estén comunicadas por un enlace transoceánico (o un enlace largo) que aumenta drásticamente el RTT.

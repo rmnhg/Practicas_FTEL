@@ -1,0 +1,117 @@
+FTEL - Laboratorio 9 - Formulario de entrega
+
+Se deben rellenar los siguientes resultados pedidos en el enunciado de la práctica:
+
+* Tarea 3. En el panel superior de Wireshark seleccione el paquete que realiza la petición GET correspondiente al recurso lab9.php. Expanda ahora el análisis del protocolo de aplicación. Observe que en la cabecera HTTP aparecen diversos campos que describen aspectos relacionados con la petición. Identifique: 
+- Versión del protocolo que usa el navegador (HTTP1.0 o HTTP1.1).
+HTTP/1.1
+
+- ¿Cuál es la identificación del navegador que realiza la petición? 
+Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:63.0) Gecko/20100101 Firefox/63.0
+
+- ¿Cuál es el nombre de la línea de cabecera en la que va?
+User-Agent
+
+- ¿Cuál es el nombre de la línea de cabecera que identifica la máquina a la que se hace la petición?
+Host
+
+- ¿Cuáles son los idiomas en los que se prefiere recibir la información que envíe el servidor? 
+en-US,en
+
+- ¿Cuál es el nombre de la línea de cabecera donde se indican?
+Accept-Language
+
+- ¿Cuál es el nombre de la línea de cabecera donde se indica que el navegador puede aceptar texto HTML como contenido?
+Accept
+
+* Tarea 4. Estudio de las respuestas a la petición HTTP. Examine ahora el detalle de los paquetes que corresponden a las respuestas del servidor. Concretamente, identifique, para la respuesta que corresponde al logotipo de la UPM: 
+- Tamaño del fichero del logotipo y dónde ha encontrado dicha información (que debe haberse obtenido usando Wireshark).
+11821 bytes y sale del apartado Hypertext Transfer Protocol en la etiqueta File Data o pinchando encima del apartado Portable Networks Graphics y mirando en la barra de abajo su tamaño (es el mismo).
+
+Vuelva a arrancar la captura de Wireshark. Cargue de nuevo la página web de la práctica y examine en el analizador la petición GET que se refiere al logotipo de FTEL. 
+- ¿Aparece la línea de cabecera If-Modified-Since? En caso afirmativo, ¿cuál es el objetivo de incluir dicha línea en la petición?
+Sí porque en esta petición el navegador ya tiene guardadas las imágenes en la caché y, para ahorrar tiempo, le pregunta al servidor si las imágenes han sido modificadas para, en caso contrario, usar las imagenes locales y en vez de recibirlas otra vez.
+
+- Examine las respuestas a las peticiones de las imágenes. ¿Qué código de estado aparece en ellas? ¿Qué significa eso para el navegador que recibe las respuestas?
+Not Modified. Significa que las imágenes que ya tenía guardadas no han sido modificadas por el servidor y se pueden reutilizar.
+
+
+* Tarea 6. Realización de consultas iterativas al DNS. Para cada uno de los sitios web indicados, realice los puntos que siguen.
+- En el cuadro de texto "Hostnames or IP addresses", escriba el nombre DNS del servidor web. En la columna "Options", marque la opción "trace". Pulse el botón "Dig". Incluya en el formulario de la práctica la salida de la orden anterior.
+www.tum.de@8.8.4.4 (Default):
+.			214155	IN	NS	a.root-servers.net.
+.			214155	IN	NS	b.root-servers.net.
+.			214155	IN	NS	c.root-servers.net.
+.			214155	IN	NS	d.root-servers.net.
+.			214155	IN	NS	e.root-servers.net.
+.			214155	IN	NS	f.root-servers.net.
+.			214155	IN	NS	g.root-servers.net.
+.			214155	IN	NS	h.root-servers.net.
+.			214155	IN	NS	i.root-servers.net.
+.			214155	IN	NS	j.root-servers.net.
+.			214155	IN	NS	k.root-servers.net.
+.			214155	IN	NS	l.root-servers.net.
+.			214155	IN	NS	m.root-servers.net.
+;; Received 228 bytes from 8.8.4.4#53(8.8.4.4) in 35 ms
+
+de.			172800	IN	NS	a.nic.de.
+de.			172800	IN	NS	f.nic.de.
+de.			172800	IN	NS	l.de.net.
+de.			172800	IN	NS	n.de.net.
+de.			172800	IN	NS	s.de.net.
+de.			172800	IN	NS	z.nic.de.
+;; Received 370 bytes from 192.203.230.10#53(192.203.230.10) in 10 ms
+
+tum.de.			86400	IN	NS	dns2.lrz.bayern.
+tum.de.			86400	IN	NS	dns3.lrz.eu.
+tum.de.			86400	IN	NS	dns1.lrz.de.
+;; Received 149 bytes from 195.243.137.26#53(195.243.137.26) in 115 ms
+
+www.tum.de.		86400	IN	CNAME	wwwv1.tum.de.
+wwwv1.tum.de.		86400	IN	A	129.187.255.228
+tum.de.			86400	IN	NS	dns1.lrz.de.
+tum.de.			86400	IN	NS	dns3.lrz.eu.
+tum.de.			86400	IN	NS	dns2.lrz.bayern.
+;; Received 273 bytes from 141.40.9.211#53(141.40.9.211) in 114 ms
+
+
+www.uni-trier.de@8.8.4.4 (Default):
+.			122899	IN	NS	a.root-servers.net.
+.			122899	IN	NS	b.root-servers.net.
+.			122899	IN	NS	c.root-servers.net.
+.			122899	IN	NS	d.root-servers.net.
+.			122899	IN	NS	e.root-servers.net.
+.			122899	IN	NS	f.root-servers.net.
+.			122899	IN	NS	g.root-servers.net.
+.			122899	IN	NS	h.root-servers.net.
+.			122899	IN	NS	i.root-servers.net.
+.			122899	IN	NS	j.root-servers.net.
+.			122899	IN	NS	k.root-servers.net.
+.			122899	IN	NS	l.root-servers.net.
+.			122899	IN	NS	m.root-servers.net.
+;; Received 228 bytes from 8.8.4.4#53(8.8.4.4) in 71 ms
+
+de.			172800	IN	NS	a.nic.de.
+de.			172800	IN	NS	f.nic.de.
+de.			172800	IN	NS	l.de.net.
+de.			172800	IN	NS	n.de.net.
+de.			172800	IN	NS	s.de.net.
+de.			172800	IN	NS	z.nic.de.
+;; Received 376 bytes from 192.203.230.10#53(192.203.230.10) in 10 ms
+
+uni-trier.de.		86400	IN	NS	ns01.uni-trier.de.
+uni-trier.de.		86400	IN	NS	ns02.uni-trier.de.
+uni-trier.de.		86400	IN	NS	ns03.uni-trier.de.
+;; Received 139 bytes from 77.67.63.105#53(77.67.63.105) in 96 ms
+
+www.uni-trier.de.	3600	IN	A	136.199.189.15
+;; Received 50 bytes from 136.199.8.243#53(136.199.8.243) in 110 ms
+
+- Indique cuál es la dirección IP del servidor web buscado.
+www.tum.de: 129.187.255.228
+www.uni-trier.de: 136.199.189.15
+
+- ¿El nombre del servidor web es un “alias”? ¿Por qué?
+Sí porque es un nombre más reconocible que la propia dirección IP de la página y facilita así su acceso.
+
+
